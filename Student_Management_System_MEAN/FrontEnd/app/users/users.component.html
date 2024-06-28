@@ -1,0 +1,37 @@
+
+<app-search></app-search>
+
+<div class="shadow p-4 border">
+
+    <div class="flex justify-between p-4">
+        <h2 class="text-xl font-semibold">Users Data</h2>
+        <button mat-raised-button color="primary" routerLink="/users/add" class="m-4">Add Users</button>
+    </div>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody class="w-full">
+                @for (user of users;track $index){
+                    <tr>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.age}}</td>
+                        <td>{{user.address}}</td>
+                        <td>
+                            <button mat-raised-button color="accent" class="m-4" [routerLink]="'/users/' + user._id" >Edit</button>
+                            <button mat-raised-button color="warn" class="m-4" (click)="delete(user._id!)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>
