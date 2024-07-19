@@ -1,0 +1,36 @@
+<div class="shadow border p-4">
+    <form [formGroup]="patientForm">
+        <div class="flex flex-wrap">
+            <form class="example-form">
+                
+                <mat-form-field class="w-full">
+                    <mat-label>Patient name</mat-label>
+                    <input type="text" matInput formControlName="patientName">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Patient age</mat-label>
+                    <input type="text" matInput formControlName="patientAge">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Refered Doctor</mat-label>
+                    <input type="text" matInput formControlName="referedDoctor">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Medical Reason</mat-label>
+                    <input type="text" matInput formControlName="medicalReason">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Location</mat-label>
+                    <input type="text" matInput formControlName="Location">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <button mat-raised-button color="primary" class="m-4" (click)="addPatient()">Add Patient</button>
+
+    </form>
+</div>
